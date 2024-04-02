@@ -40,3 +40,11 @@ The query response from the website is a JSON response with the following five f
 * Solution completeness.
 * Performance.
 * Architecture (design, separation of concerns, etc.).
+
+## Solution
+
+Dopo un'attenta valutazione dei requisiti, ho optato per l'utilizzo di React con TypeScript al fine di ridurre al minimo i potenziali errori di tipo. Ho iniziato l'implementazione con lo sviluppo dei test per la funzione getArticles nel caso d'uso più semplice: il recupero degli articoli cercati per autore che si trovano nella stessa pagina. Successivamente, ho proceduto con l'implementazione del servizio Articles utilizzando la libreria Axios per effettuare la chiamata e la libreria axios-cache-interceptor per memorizzare nella cache la risposta della chiamata. Durante lo sviluppo, ho migliorato ulteriormente la chiamata inserendo anche una gestione del tempo di vita della cache personalizzata (TTL).
+
+Nel frattempo, ho sviluppato l'interfaccia utente, che è stata progettata per offrire un'esperienza fluida e intuitiva. La chiamata a getArticles avviene al momento del submit del form, all'interno del quale viene gestita tutta la logica necessaria. Infine, dopo che i primi test sono andati a buon fine ho ampliato i test per includere la chiamata a getArticles utilizzando la paginazione, e ho concluso il processo con un refactoring generale del codice per garantirne la qualità e la manutenibilità nel lungo termine.
+
+Lo stile è definito al minimo utilizzando Tailwind, il giusto necessario per renderlo intuibile.
